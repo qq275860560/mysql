@@ -15,6 +15,17 @@ docker pull qq275860560/mysql
 docker run -d -p 3306:3306 --name mysql qq275860560/mysql 
 
 ```
+或者
+```
+(docker kill mysql || true) && (docker rm mysql || true) 
+docker pull qq275860560/mysql
+docker run -it -p 3306:3306 --name mysql qq275860560/mysql /bin/bash
+
+source /etc/profile &&\
+    /usr/sbin/sshd &&\
+    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize 	
+
+```
 
 # 温馨提醒
 

@@ -29,7 +29,6 @@ send "flush privileges;\r"
 expect "mysql>"
 send "exit\r"
 interact
-expect eof
 EOF
 
 /usr/bin/expect<<-EOF
@@ -39,7 +38,9 @@ expect {
 "Enter password:" {send "$newPassword\r"}
 }
 interact
-expect eof
 EOF
+
+chown -R root:root /var/lib/mysql /usr/share/mysql /var/run/mysqld
+chmod 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld
 
 
