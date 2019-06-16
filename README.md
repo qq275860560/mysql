@@ -13,7 +13,7 @@ jenkins主节点镜像
 # 使用方式
 ```
 docker pull qq275860560/mysql
-docker run -it --name mysql qq275860560/mysql /bin/bash
+docker run -it -p 3306:3306 --name mysql qq275860560/mysql /bin/bash
 source /etc/profile && service sshd start 
 
 ```

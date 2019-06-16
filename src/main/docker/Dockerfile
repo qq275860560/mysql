@@ -6,12 +6,11 @@ RUN  yum -y install  http://dev.mysql.com/get/mysql57-community-release-el7-11.n
     yum repolist enabled | grep mysql.*   &&\
     yum -y install mysql-community-server  &&\
     rm -rf /var/cache/yum/*
-    
+ 
+RUN curl -fsSL "https://raw.githubusercontent.com/qq275860560/mysql/master/src/main/centos/init.sh" | sh
 
-    
-	
 CMD source /etc/profile &&\
-     service sshd start &&\
-     service mysql start 	
+    service sshd start &&\
+    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize 	
 
  
