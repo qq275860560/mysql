@@ -6,11 +6,15 @@ jenkins主节点镜像
 
 # 功能
 ## mysql安装
-## 自动化配置密码和权限
+## 配置root账号密码
+## 配置远程访问权限
+## 导入初始数据
 
 # 使用方式
 ```
-docker run
+docker pull qq275860560/mysql
+docker run -it --name mysql qq275860560/mysql /bin/bash
+source /etc/profile && service sshd start 
 
 ```
 
