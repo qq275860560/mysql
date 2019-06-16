@@ -31,14 +31,14 @@ send "exit\r"
 interact
 EOF
 
-#/usr/bin/expect<<-EOF
-#set timeout -1
-#spawn  mysqladmin shutdown -uroot -p
-#expect {
-#"Enter password:" {send "$newPassword\r"}
-#}
-#interact
-#expect eof
-#EOF
+/usr/bin/expect<<-EOF
+set timeout -1
+spawn  mysqladmin shutdown -uroot -p
+expect {
+"Enter password:" {send "$newPassword\r"}
+}
+interact
+expect eof
+EOF
 
 
