@@ -7,7 +7,7 @@ RUN  yum -y install  http://dev.mysql.com/get/mysql57-community-release-el7-11.n
     yum -y install mysql-community-server  &&\
     rm -rf /var/cache/yum/*
  
-RUN curl -fsSL "https://raw.githubusercontent.com/qq275860560/mysql/master/src/main/centos/init.sh" | sh
+RUN curl -fsSL "https://raw.githubusercontent.com/qq275860560/mysql/master/src/main/centos/tmp/init.sh" | sh
 
 CMD source /etc/profile &&\
     service sshd start &&\

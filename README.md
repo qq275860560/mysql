@@ -6,15 +6,13 @@ jenkins主节点镜像
 
 # 功能
 ## mysql安装
-## 配置root账号密码
-## 配置远程访问权限
-## 导入初始数据
+## 配置账号root密码123456
+## 配置远程访问权限为任何机器
 
 # 使用方式
 ```
 docker pull qq275860560/mysql
-docker run -it -p 3306:3306 --name mysql qq275860560/mysql /bin/bash
-source /etc/profile && service sshd start 
+docker run -d -p 3306:3306 --name mysql qq275860560/mysql 
 
 ```
 
