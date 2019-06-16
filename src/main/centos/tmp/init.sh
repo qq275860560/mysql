@@ -28,7 +28,6 @@ expect "mysql>"
 send "flush privileges;\r"
 expect "mysql>"
 send "exit\r"
-interact
 expect eof
 EOF
 
@@ -38,7 +37,6 @@ spawn  mysqladmin shutdown -uroot -p
 expect {
 "Enter password:" {send "$newPassword\r"}
 }
-interact
 expect eof
 EOF
 
