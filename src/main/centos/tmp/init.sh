@@ -29,6 +29,7 @@ send "flush privileges;\r"
 expect "mysql>"
 send "exit\r"
 interact
+expect eof
 EOF
 
 /usr/bin/expect<<-EOF
