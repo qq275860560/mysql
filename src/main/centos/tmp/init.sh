@@ -42,5 +42,3 @@ interact
 expect eof
 EOF
 
-chmod -R 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld
-

@@ -26,7 +26,6 @@ docker run -it -p 3306:3306 --name mysql qq275860560/mysql /bin/bash
 
 source /etc/profile &&\
     /usr/sbin/sshd &&\
-    chmod -R 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
     /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize 	
 
 ```
