@@ -11,6 +11,9 @@ RUN echo "201906171125,chmod,interact,expect eof" && curl -fsSL "https://raw.git
 
 CMD source /etc/profile &&\
     /usr/sbin/sshd &&\
-    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize 	
+    chmod -R 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
+    chown -R root:root /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
+    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize
+    
 
  
