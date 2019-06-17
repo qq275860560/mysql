@@ -7,7 +7,7 @@ RUN  yum -y install  http://dev.mysql.com/get/mysql57-community-release-el7-11.n
     yum -y install mysql-community-server  &&\
     rm -rf /var/cache/yum/*
  
-RUN echo "有interact" && curl -fsSL "https://raw.githubusercontent.com/qq275860560/mysql/master/src/main/centos/tmp/init.sh" | sh
+RUN echo "有interact和expect eof" && curl -fsSL "https://raw.githubusercontent.com/qq275860560/mysql/master/src/main/centos/tmp/init.sh" | sh
 
 CMD source /etc/profile &&\
     /usr/sbin/sshd &&\
