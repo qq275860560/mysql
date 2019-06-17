@@ -13,7 +13,7 @@ CMD source /etc/profile &&\
     /usr/sbin/sshd &&\
     chmod -R 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
     chown -R root:root /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
-    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize
+    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize && && tail -f /var/log/lastlog
     
 
  

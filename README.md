@@ -11,8 +11,8 @@ jenkins主节点镜像
 
 # 使用方式
 ```
-(docker kill mysql || true) && (docker rm mysql || true) 
 docker pull qq275860560/mysql
+(docker kill mysql || true) && (docker rm mysql || true) 
 docker run -d -p 3306:3306 --name mysql qq275860560/mysql 
 
 ```
@@ -20,13 +20,27 @@ docker run -d -p 3306:3306 --name mysql qq275860560/mysql
 或者
 
 ```
-(docker kill mysql || true) && (docker rm mysql || true) 
 docker pull qq275860560/mysql
+(docker kill mysql || true) && (docker rm mysql || true) 
+docker run -d -p 3306:3306 --name mysql qq275860560/mysql /bin/bash -c 'source /etc/profile &&\
+    /usr/sbin/sshd &&\
+    chmod -R 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
+    chown -R root:root /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
+    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize && tail -f /var/log/lastlog'
+
+```
+
+或者
+
+```
+docker pull qq275860560/mysql
+(docker kill mysql || true) && (docker rm mysql || true) 
 docker run -it -p 3306:3306 --name mysql qq275860560/mysql /bin/bash
 
-source /etc/profile &&\
-    /usr/sbin/sshd &&\
-    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize 	
+#容器内执行
+chmod -R 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
+    chown -R root:root /var/lib/mysql /usr/share/mysql /var/run/mysqld &&\
+    /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize
 
 ```
 
