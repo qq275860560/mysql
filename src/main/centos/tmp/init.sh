@@ -8,8 +8,6 @@ echo ${SHELL_FOLDER}
 cd ${SHELL_FOLDER}
 #
 
-mkdir -p /var/lib/mysql /usr/share/mysql /var/run/mysqld  
-chmod 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld
 /usr/sbin/mysqld --defaults-file=/etc/my.cnf  --initialize --user=root
 /usr/sbin/mysqld  --defaults-file=/etc/my.cnf --user=root --daemonize
 newPassword=123456
@@ -44,7 +42,5 @@ interact
 expect eof
 EOF
 
-chown -R root:root /var/lib/mysql /usr/share/mysql /var/run/mysqld
-chmod 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld
-
+chmod -R 777 /var/lib/mysql /usr/share/mysql /var/run/mysqld
 
