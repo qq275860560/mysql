@@ -42,5 +42,5 @@ interact
 expect eof
 EOF
 
-#chown -R root:root /var/lib/mysql
-#chown -R root:root /var/log/mysql
+chmod -R 777 /var/lib/mysql /var/log /usr/share/mysql /var/run/mysqld
+chown -R root:root /var/lib/mysql /var/log /usr/share/mysql /var/run/mysqld
